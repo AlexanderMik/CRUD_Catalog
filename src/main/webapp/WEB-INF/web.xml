@@ -4,4 +4,25 @@
 
 <web-app>
   <display-name>Smartphone catalog</display-name>
+  
+  <servlet>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>servlet.AddServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/AddServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>servlet.DeleteServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+
 </web-app>

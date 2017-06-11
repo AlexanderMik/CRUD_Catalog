@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ page isELIgnored="false" %>
 
 <html>
@@ -37,6 +38,7 @@
         <th>Model</th>
         <th>Price</th>
         <th>Year</th>
+        <th>Delete</th>
     </tr>
 <c:forEach var="list" items="${models.listOfAllModels}">
     <tr>
@@ -45,10 +47,33 @@
         <td>${list.model}</td>
         <td>${list.price}</td>
         <td>${list.year}</td>
+        <td><a href="/delete?id=${list.id}">delete</a></td>
     </tr>
 </c:forEach>
 </table>
 </c:if>
 
+<h3>Add a smartphone</h3>
+<form action="AddServlet" method="post">
+    <table>
+        <tr>
+            <td>Company</td>
+            <td><input name="company" type="text"></td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td><input name="model" type="text"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input name="price" type="number"></td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td><input name="year" type="number"></td>
+        </tr>
+    </table>
+    <input type="submit" value="add">
+</form>
 </body>
 </html>

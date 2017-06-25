@@ -6,8 +6,6 @@ public interface DAOManager {
 
     void addSmartphone(String company, String model, int price, int year);
 
-    void showAllSmartphones();
-
     SmartphoneModel getSmartphoneById(int id);
 
     void removeSmartphone(int id);

@@ -2,7 +2,6 @@ package servlet;
 
 import dao.Manager;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,6 @@ public class AddServlet extends HttpServlet{
 
         manager.addSmartphone(company, model, price, year);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-        dispatcher.forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 }

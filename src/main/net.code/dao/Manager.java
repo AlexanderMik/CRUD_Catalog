@@ -23,21 +23,6 @@ public class Manager implements DAOManager{
         }
     }
 
-    public void showAllSmartphones() {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
-
-            session.beginTransaction();
-            List models = session.createQuery("FROM SmartphoneModel").list();
-
-            for (Object model : models) {
-                System.out.println(model);
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
     public SmartphoneModel getSmartphoneById(int id) {
         SmartphoneModel model = null;
 

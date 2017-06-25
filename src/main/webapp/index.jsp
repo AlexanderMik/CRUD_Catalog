@@ -31,26 +31,28 @@
 <jsp:useBean id="models" class="dao.Manager"/>
 
 <c:if test="${!empty models.listOfAllModels}">
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Company</th>
-        <th>Model</th>
-        <th>Price</th>
-        <th>Year</th>
-        <th>Delete</th>
-    </tr>
-<c:forEach var="list" items="${models.listOfAllModels}">
-    <tr>
-        <td>${list.id}</td>
-        <td>${list.company}</td>
-        <td>${list.model}</td>
-        <td>${list.price}</td>
-        <td>${list.year}</td>
-        <td><a href="/delete?id=${list.id}">delete</a></td>
-    </tr>
-</c:forEach>
-</table>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Year</th>
+            <th>Edit price</th>
+            <th>Delete</th>
+        </tr>
+        <c:forEach var="list" items="${models.listOfAllModels}">
+            <tr>
+                <td>${list.id}</td>
+                <td>${list.company}</td>
+                <td>${list.model}</td>
+                <td>${list.price}</td>
+                <td>${list.year}</td>
+                <td><a href="edit.jsp?id=${list.id}&company=${list.company}&model=${list.model}&year=${list.year}">edit</a></td>
+                <td><a href="delete?id=${list.id}">delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
 </c:if>
 
 <h3>Add a smartphone</h3>

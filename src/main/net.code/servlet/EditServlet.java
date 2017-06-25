@@ -8,12 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class DeleteServlet extends HttpServlet {
+public class EditServlet extends HttpServlet {
     private Manager manager = new Manager();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        manager.removeSmartphone(Integer.valueOf(req.getParameter("id")));
+        int id = Integer.valueOf(req.getParameter("id"));
+        int price = Integer.valueOf(req.getParameter("price"));
+
+        manager.updateSmartphone(id, price);
 
         req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
